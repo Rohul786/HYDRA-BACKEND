@@ -1,0 +1,39 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Model files
+*.pkl
+*.joblib
+
+# Environment variables
+.env
+.env.local
+
+# Project data (generated files - too large for GitHub)
+data/raw/
+!data/raw/.gitkeep
+data/processed/
+!data/processed/.gitkeep
+
+# Cache (runtime generated)
+cache/
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# OS generated files
+.DS_Store
+Thumbs.db
