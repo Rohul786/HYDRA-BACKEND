@@ -35,6 +35,8 @@ from ingestion.drainage_graph import (
 from backend.routes_risk import router as risk_router
 from backend.routes_routing import router as routing_router
 from backend.routes_weather import router as weather_router
+from backend.routes_auth import router as auth_router
+from backend.routes_notifications import router as notifications_router
 from backend.cache_manager import patch_osmnx_cache, audit_cache_directory
 
 # Configure logging
@@ -341,6 +343,8 @@ async def health_check():
 app.include_router(risk_router)
 app.include_router(routing_router)
 app.include_router(weather_router)
+app.include_router(auth_router)
+app.include_router(notifications_router)
 
 # Mount compiled React frontend from frontend/dist if available
 FRONTEND_DIST = PROJECT_ROOT / "frontend" / "dist"
