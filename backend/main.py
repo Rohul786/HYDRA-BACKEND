@@ -279,9 +279,10 @@ async def unhandled_exception_handler(request: Request, exc: Exception):
     )
 
 
-@app.get("/api-info", tags=["Root"])
+@app.api_route("/", methods=["GET", "HEAD"], tags=["Root"])
+@app.api_route("/api-info", methods=["GET", "HEAD"], tags=["Root"])
 async def api_info():
-    """API metadata and active endpoints information."""
+    """API metadata and active endpoints information. Responds to both GET and HEAD for cloud health probes."""
     return {
         "title": "Urban Flood Early Warning & Backflow API",
         "status": "online",
@@ -301,7 +302,7 @@ async def api_info():
     }
 
 
-@app.get("/health", tags=["Health"])
+@app.api_route("/health", methods=["GET", "HEAD"], tags=["Health"])
 async def health_check():
     """
     System health check endpoint.
